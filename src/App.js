@@ -21,7 +21,7 @@ function App() {
  
 
 useEffect(() => {
-        const ws = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/threat_count/');
+        const ws = new WebSocket('wss://threatmap-backend-only.onrender.com/ws/threat_count/');
  
         ws.onopen = () => {
             console.log('WebSocket Threat Count Connected');
@@ -51,7 +51,7 @@ useEffect(() => {
 
   // WebSocket Setup
   useEffect(() => {
-    const socket = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/incident_threats/'); // Replace with your WebSocket URL
+    const socket = new WebSocket('wss://threatmap-backend-only.onrender.com/ws/incident_threats/'); // Replace with your WebSocket URL
  
     socket.onmessage = (event) => {
       const incomingData = JSON.parse(event.data); // Assuming the WebSocket data is in JSON format
