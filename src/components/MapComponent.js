@@ -280,7 +280,7 @@ const MapComponent = ({ isSidebarOpen, attackSpeed }) => {
     }
  
     // const socket = new WebSocket('ws://localhost:8000/ws/threats/');
-    const socket = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/threats/');
+    const socket = new WebSocket('wss://threatmap-backend-only.onrender.com/ws/threats/');
     socket.onmessage = (event) => {
       const newData = JSON.parse(event.data);
       const threatData = newData.threat_data;
@@ -322,7 +322,7 @@ const MapComponent = ({ isSidebarOpen, attackSpeed }) => {
     setDataType(period);
     setLoading(true);
  
-    const url = `http://threatmap-backend-only.onrender.com/th/trend/?country=${selectedCountry}&period=${period}`;
+    const url = `https://threatmap-backend-only.onrender.com/th/trend/?country=${selectedCountry}&period=${period}`;
  
     fetch(url)
     .then((response) => response.json())
