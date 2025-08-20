@@ -71,7 +71,7 @@ const StatsPanel = ({ isSidebarOpen, toggleSidebar }) => {
   const [targetedIndustries, setTargetedIndustries] = useState([]);
  
   useEffect(() => {
-    const nationSocket = new WebSocket('ws://localhost:8000/ws/top5_country/');
+    const nationSocket = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/top5_country/');
     nationSocket.onmessage = (event) => {
       const nationMessage = JSON.parse(event.data);
       const nationData = nationMessage.data;  
