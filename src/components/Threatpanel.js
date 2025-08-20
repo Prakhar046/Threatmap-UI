@@ -67,7 +67,7 @@ const Threatpanel = ({ handleSpeedChange, isSidebarOpen, toggleSidebar, activeAt
  
  
     useEffect(() => {
-        const socket = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/daily_threats/');
+        const socket = new WebSocket('wss://threatmap-backend-only.onrender.com/ws/daily_threats/');
  
         socket.onopen = () => {
             console.log("WebSocket connection established");
