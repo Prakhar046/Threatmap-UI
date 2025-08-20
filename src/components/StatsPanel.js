@@ -71,7 +71,7 @@ const StatsPanel = ({ isSidebarOpen, toggleSidebar }) => {
   const [targetedIndustries, setTargetedIndustries] = useState([]);
  
   useEffect(() => {
-    const nationSocket = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/top5_country/');
+    const nationSocket = new WebSocket('wss://threatmap-backend-only.onrender.com/ws/top5_country/');
     nationSocket.onmessage = (event) => {
       const nationMessage = JSON.parse(event.data);
       const nationData = nationMessage.data;  
@@ -93,7 +93,7 @@ const StatsPanel = ({ isSidebarOpen, toggleSidebar }) => {
     };
     nationSocket.onclose = () => console.log('Nations WebSocket closed');
 
-    const industrySocket = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/top5_industry/');
+    const industrySocket = new WebSocket('wss://threatmap-backend-only.onrender.com/ws/top5_industry/');
     industrySocket.onmessage = (event) => {
       const industryMessage = JSON.parse(event.data);
       const industryData = industryMessage.data;  
