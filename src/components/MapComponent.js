@@ -279,7 +279,7 @@ const MapComponent = ({ isSidebarOpen, attackSpeed }) => {
       showNextAttack(attack);
     }
  
-    const socket = new WebSocket('ws://localhost:8000/ws/threats/');
+    // const socket = new WebSocket('ws://localhost:8000/ws/threats/');
     const socket = new WebSocket('ws://threatmap-backend-only.onrender.com/ws/threats/');
     socket.onmessage = (event) => {
       const newData = JSON.parse(event.data);
